@@ -72,7 +72,7 @@ const Home: NextPage = () => {
                   Go to sign up
                 </Link>
                 <button className="btn-secondary btn" type="submit">
-                  Login please
+                  Login pleaseasd
                 </button>
               </div>
             </div>
