@@ -36,6 +36,7 @@ const isAuthed = t.middleware(({ ctx, next }) => {
 
 const isAdmin = t.middleware(({ ctx, next }) => {
   console.log(ctx.session)
+ // @ts-expect-error
   if (ctx.session?.user.role != 'Admin') {
     throw new TRPCError({ code: "UNAUTHORIZED" });
   }

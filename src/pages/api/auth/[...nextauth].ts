@@ -44,7 +44,9 @@ export const authOptions: NextAuthOptions = {
       if (user) {
         token.userId = user.id;
         token.email = user.email;
+         //@ts-ignore
         token.username = user.username;
+          //@ts-ignore
         token.role = user.role
       }
 
@@ -52,9 +54,13 @@ export const authOptions: NextAuthOptions = {
     },
     session: async ({ session, token }) => {
       if (token) {
+          //@ts-ignore
         session.user.userId = token.userId;
+          //@ts-ignore
         session.user.email = token.email;
+          //@ts-ignore
         session.user.username = token.username;
+          //@ts-ignore
         session.user.role = token.role;
       }
 

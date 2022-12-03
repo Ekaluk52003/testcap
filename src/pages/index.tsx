@@ -19,6 +19,7 @@ const Home: NextPage = () => {
     try {
       const result = await signIn("credentials", { ...data, redirect: false });
       console.log(result);
+      //@ts-ignore
       if (!result.ok) {
         setToast(true);
       } else {
