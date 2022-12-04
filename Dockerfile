@@ -11,7 +11,7 @@ COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 
 RUN npx prisma generate
-RUN npm build
+RUN npm run build
 
 FROM node:18-alpine AS deploy
 
