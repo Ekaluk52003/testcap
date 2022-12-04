@@ -73,7 +73,7 @@ const Home: NextPage = () => {
                   Go to sign up I will jump
                 </Link>
                 <button className="btn-secondary btn" type="submit">
-                  Logins
+                  Logins cap
                 </button>
               </div>
             </div>
