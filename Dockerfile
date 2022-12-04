@@ -3,9 +3,9 @@ WORKDIR /app
 COPY package.json ./
 RUN npm install
 
-FROM node:16-alpine AS build
+# FROM node:16-alpine AS build
 
-WORKDIR /app
+# WORKDIR /app
 # COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 
