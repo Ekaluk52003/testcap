@@ -1,14 +1,8 @@
-FROM node:16-alpine AS dependencies
+FROM node:16-alpine
 WORKDIR /app
 COPY package.json ./
 RUN npm install
-
-# FROM node:16-alpine AS build
-
-# WORKDIR /app
-# COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
-
 ARG DATABASE_URL
 ENV DATABASE_URL=$DATABASE_URL
 ARG NEXTAUTH_URL
@@ -22,15 +16,6 @@ ENV NEXTAUTH_SECRET=$NEXTAUTH_SECRET
 RUN npx prisma generate
 
 RUN npm run build
-
-# FROM node:16-alpine AS deploy
-# WORKDIR /app
-
-# ENV NODE_ENV production
-
-# COPY --from=build /app/public ./public
-# COPY --from=build /app/package.json ./package.json
-
 
 EXPOSE 3000
 
