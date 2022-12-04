@@ -14,6 +14,9 @@ RUN npx prisma generate
 RUN npm run build
 
 FROM node:18-alpine AS deploy
+ARG DATABASE_URL=${DATABASE_URL}
+ENV DISCORD_CLIENT_ID=${DISCORD_CLIENT_ID}
+
 
 WORKDIR /app
 
