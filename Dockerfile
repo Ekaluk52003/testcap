@@ -1,4 +1,7 @@
 FROM node:18-alpine AS dependencies
+ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
+RUN echo "value for DATABASE_URL: [${DATABASE_URL}]"
 
 WORKDIR /app
 COPY package.json ./
@@ -14,9 +17,7 @@ RUN npx prisma generate
 RUN npm run build
 
 FROM node:18-alpine AS deploy
-ARG DATABASE_URL
-ENV DATABASE_URL=${DATABASE_URL}
-RUN echo "value for DATABASE_URL: [${DATABASE_URL}]"
+
 
 WORKDIR /app
 
