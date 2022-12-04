@@ -23,13 +23,13 @@ RUN npx prisma generate
 
 RUN npm run build
 
-FROM node:16-alpine AS deploy
-WORKDIR /app
+# FROM node:16-alpine AS deploy
+# WORKDIR /app
 
-ENV NODE_ENV production
+# ENV NODE_ENV production
 
-COPY --from=build /app/public ./public
-COPY --from=build /app/package.json ./package.json
+# COPY --from=build /app/public ./public
+# COPY --from=build /app/package.json ./package.json
 
 
 EXPOSE 3000
