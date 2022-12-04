@@ -16,9 +16,7 @@ ENV NEXTAUTH_SECRET=$NEXTAUTH_SECRET
 RUN npx prisma generate
 
 RUN npm run build
-
 EXPOSE 3000
-
 ENV PORT 3000
 
 CMD ["node", "server.js"]
