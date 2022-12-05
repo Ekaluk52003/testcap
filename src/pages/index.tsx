@@ -70,7 +70,7 @@ const Home: NextPage = () => {
               />
               <div className="card-actions items-center justify-between">
                 <Link href="/sign-up" className="link">
-                  Go to sign up I will jump
+                  Go to signup
                 </Link>
                 <button className="btn-secondary btn" type="submit">
                   Logins cap
