@@ -1,6 +1,7 @@
+.git
+.results
+scripts
+*Dockerfile*
 node_modules
-.next
-.github
-.husky
-Dockerfile*
-docker-compose*
+.env
+.env.example
